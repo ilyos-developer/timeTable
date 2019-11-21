@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Расписания 943-17</string>
+    <string name="button1">Понидельник</string>
+    <string name="button2">Вторник</string>
+    <string name="button3">Среда</string>
+    <string name="button4">Четверг</string>
+    <string name="button5">Пятница</string>
+    <string name="button6">Суббота</string>
+    <string name="timeView">Время</string>
+    <string name="paraView">Пара/тип</string>
+    <string name="cabinetView">Кабинет</string>
+    <string name="reklamView">Здесь может быть ваша реклама</string>
+</resources>
