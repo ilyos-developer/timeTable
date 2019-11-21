@@ -1,23 +1,21 @@
 package com.example.timetable;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-
-import java.util.ArrayList;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.TimeTableViewHolder> {
 
-    ArrayList<TimeTableItem> timeTableItems;
-    Context context;
+    private ArrayList<TimeTableItem> timeTableItems;
+    private Context context;
 
     public TimeTableAdapter(ArrayList<TimeTableItem> timeTableItems, Context context) {
         this.timeTableItems = timeTableItems;
@@ -28,15 +26,14 @@ public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.Time
     @Override
     public TimeTableAdapter.TimeTableViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.time_table_item, viewGroup, false);
-        TimeTableViewHolder timeTableViewHolder = new TimeTableViewHolder(view);
-        return timeTableViewHolder;
+        return new TimeTableViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull TimeTableAdapter.TimeTableViewHolder viewHolder, int position) {
         TimeTableItem timeTableItem = timeTableItems.get(position);
 
-        viewHolder.button.setText(timeTableItem.getDay());
+        viewHolder.tvTitle.setText(timeTableItem.getDay());
     }
 
     @Override
@@ -46,13 +43,13 @@ public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.Time
 
     public class TimeTableViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public Button button;
+        private TextView tvTitle;
 
-        public TimeTableViewHolder(@NonNull View itemView) {
+        private TimeTableViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
 
-            button = itemView.findViewById(R.id.button);
+            tvTitle = itemView.findViewById(R.id.tvTitle);
         }
 
         @Override
