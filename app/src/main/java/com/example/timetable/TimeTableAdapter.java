@@ -59,9 +59,11 @@ public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.Time
             TimeTableItem timeTableItem = timeTableItems.get(position);
 
             Intent intent = new Intent(context, LessonsActivity.class);
+            intent.putExtra("day", timeTableItem.getDay());
             intent.putExtra("time1", timeTableItem.getTime1());
             intent.putExtra("time2", timeTableItem.getTime2());
             intent.putExtra("time3", timeTableItem.getTime3());
+            intent.putExtra("lesson_migalka", timeTableItem.getLesson_migalka());
             intent.putExtra("lesson1", timeTableItem.getLesson1());
             intent.putExtra("lesson2", timeTableItem.getLesson2());
             intent.putExtra("lesson3", timeTableItem.getLesson3());
